@@ -19,15 +19,15 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("stu.napls.nabootauth.controller"))
+                .apis(RequestHandlerSelectors.basePackage("stu.napls.boostimauth.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("NA Boot Auth API")
-                .description("API of auth system for NA Boot Plan.")
+                .title("Boostim auth API")
+                .description("API of Boostim auth.")
                 .contact(new Contact("Tei Michael", "", "teimichael@outlook.com"))
                 .version("1.0")
                 .build();
