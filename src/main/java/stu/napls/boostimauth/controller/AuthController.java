@@ -83,7 +83,11 @@ public class AuthController {
         }
 
         Identity identity = new Identity();
-        identity.setUuid(UUID.randomUUID().toString());
+        String uuid = authPreregister.getUuid();
+        if (uuid == null || uuid.equals("")) {
+            uuid = UUID.randomUUID().toString();
+        }
+        identity.setUuid(uuid);
         identity.setUsername(authPreregister.getUsername());
         identity.setPassword(bCryptPasswordEncoder.encode(authPreregister.getPassword()));
         identity.setStatus(IdentityConst.PREREGISTER);
